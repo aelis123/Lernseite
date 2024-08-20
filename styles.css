@@ -7,7 +7,21 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: auto; /* Ermöglicht das Scrollen bei Bedarf */
+    overflow: auto;
+}
+a { 
+    text-decoration: none;
+    color: #3c6ca3;
+    transition: color 0.3s ease;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Maximale Breite der gesamten Container-Gruppe */
 }
 
 .container {
@@ -16,10 +30,11 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px;
-    /* Höhe des Containers setzen, wenn nötig */
-    max-height: 80vh; /* Macht den Container maximal 80% der Viewport-Höhe */
-    overflow: auto; /* Ermöglicht Scrollen innerhalb des Containers */
+    max-width: 400px;
+    flex: 1;
+    min-width: 300px;
+    max-height: 80vh;
+    overflow: auto;
     word-wrap: break-word;
 }
 
@@ -38,7 +53,33 @@ h1 {
 .abbreviation-item {
     margin-bottom: 10px;
 }
+.osi-model {
+    width: 300px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.osi-layer {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.osi-layer:last-child {
+    border-bottom: none;
+}
+
+.osi-layer h2 {
+    font-size: 18px;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.osi-layer p {
+    margin: 0;
+    color: #666;
+}
 .dropdown-btn {
     background-color: #3498db;
     color: #ffffff;
