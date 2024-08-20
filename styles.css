@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Ermöglicht das Scrollen bei Bedarf */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    /* Höhe des Containers setzen, wenn nötig */
+    max-height: 80vh; /* Macht den Container maximal 80% der Viewport-Höhe */
+    overflow: auto; /* Ermöglicht Scrollen innerhalb des Containers */
+    word-wrap: break-word;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.abbreviation-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.abbreviation-item {
+    margin-bottom: 10px;
+}
+
+.dropdown-btn {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.dropdown-btn:hover {
+    background-color: #2980b9;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333333;
+}
