@@ -45,13 +45,51 @@
                     </div>
                 </div>
                 <div class="abbreviation-item">
+                    <button class="dropdown-btn">OSI-Modell</button>
+                    <div class="dropdown-content">
+                        <p>Das <a href="https://3.bp.blogspot.com/-oz_8MJgG70k/Vxm-klCDucI/AAAAAAAAIVk/YblKuGAxGBk6Ma_7QhViiYoXrfjbGj30wCLcB/s1600/2911722148_b705ac15d9_o.png" target="_blank" rel="noopener noreferrer">OSI-Modell (Open Systems Interconnection)</a> ist ein sieben-Schichten-Modell für Netzwerkkommunikation, das hilft, Netzwerksysteme zu verstehen und zu standardisieren.</p>
+
+                        <div class="osi-model">
+                            <div class="osi-layer" id="layer-7">
+                                <h2>Layer 7: Anwendung</h2>
+                                <p>Stellt Dienste für Endanwenderanwendungen bereit.</p>
+                            </div>
+                            <div class="osi-layer" id="layer-6">
+                                <h2>Layer 6: Darstellung</h2>
+                                <p>Stellt sicher, dass die Daten in einem standardisierten Format vorliegen.</p>
+                            </div>
+                            <div class="osi-layer" id="layer-5">
+                                <h2>Layer 5: Sitzung</h2>
+                                <p>Verwaltet die Sitzungen und den Dialog zwischen den Anwendungen.</p>
+                            </div>
+                            <div class="osi-layer" id="layer-4">
+                                <h2>Layer 4: Transport</h2>
+                                <p>Stellt die Übertragung von Daten zwischen Endsystemen sicher.</p>
+                            </div>
+                            <div class="osi-layer" id="layer-3">
+                                <h2>Layer 3: Netzwerk</h2>
+                                <p>Verantwortlich für die Weiterleitung der Pakete durch das Netzwerk.</p>
+                            </div>
+                            <div class="osi-layer" id="layer-2">
+                                <h2>Layer 2: Sicherung</h2>
+                                <p>Stellt die fehlerfreie Übertragung von Frames zwischen Geräten sicher.</p>
+                            </div>
+                            <div class="osi-layer" id="layer-1">
+                                <h2>Layer 1: Physikalisch</h2>
+                                <p>Definiert die physikalischen Mittel für die Datenübertragung.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="abbreviation-item">
                     <button class="dropdown-btn">Firewall</button>
                     <div class="dropdown-content">
                         <p>Eine Firewall ist ein Sicherheitssystem, das den Datenverkehr zwischen verschiedenen Netzwerken kontrolliert und potenziell schädliche Daten blockiert.</p>
                     </div>
                 </div>
                 <div class="abbreviation-item">
-                    <button class="dropdown-btn">Gängige Netzwerk-Verschlüsselungsarten</button>
+                    <button class="dropdown-btn">Netzwerk-Verschlüsselungsarten</button>
                     <div class="dropdown-content">
                         <p><strong>WEP</strong>, Wired Equivalent Privacy: Eine veraltete und unsichere WLAN-Verschlüsselung, die leicht zu knacken ist.</p>
                         <p><strong>WPA</strong>, Wi-Fi Protected Access: Eine verbesserte WLAN-Verschlüsselung, die stärker als WEP ist, aber mittlerweile veraltet.</p>
@@ -99,7 +137,9 @@
                 <div class="abbreviation-item">
                     <button class="dropdown-btn">MAC-Adresse</button>
                     <div class="dropdown-content">
-                        <p>Eine MAC-Adresse (Media Access Control Address) ist eine eindeutige, physikalische Adresse, die jedem Netzwerkgerät zugewiesen ist und es identifizierbar macht.</p>
+                        <p>Eine MAC-Adresse (Media Access Control Address) ist eine eindeutige, physikalische Adresse, die jedem Netzwerkgerät zugewiesen ist und es identifizierbar macht.
+                            MAC-Adressen lassen sich außerdem über die Router-Einstellungen Whitelisten. Das bedeutet, dass ausschließlich MAC-Adressen, die in der Whitelist angegeben sind, auf das Netzwerk zugreifen können.
+                        </p>
                     </div>
                 </div>
              
@@ -145,7 +185,7 @@
                 <div class="abbreviation-item">
                     <button class="dropdown-btn">DMZ</button>
                     <div class="dropdown-content">
-                        <p>Eine DMZ (Demilitarized Zone) ist ein Netzwerksegment, das zwischen einem internen Netzwerk und dem Internet geschaltet ist, um zusätzliche Sicherheitsbarrieren zu schaffen.</p>
+                        <p>Eine DMZ (Demilitarisierte Zone) ist ein Netzwerksegment, das zwischen einem internen Netzwerk und dem öffentlichen Internet liegt. Sie wird genutzt, um Systeme wie Web- und Mail-Server, die von außen erreichbar sein müssen, von sensiblen internen Netzwerken zu isolieren. Das Ziel ist es, bei einem Angriff auf diese Systeme den Schaden zu begrenzen, indem der Zugang zum internen Netzwerk erschwert wird. In einer typischen Konfiguration schützt eine Firewall die DMZ und eine weitere Firewall trennt die DMZ vom internen Netzwerk.</p>
                     </div>
                 </div>
                 <div class="abbreviation-item">
@@ -170,8 +210,35 @@
                     <button class="dropdown-btn">VirtualBox</button>
                     <div class="dropdown-content">
                         <p><strong>VirtualBox</strong> ist eine kostenlose Software von Oracle, mit der du mehrere Betriebssysteme gleichzeitig auf einem einzigen Computer ausführen kannst. Es erstellt virtuelle Maschinen, die wie echte Computer funktionieren, und erlaubt es, verschiedene Betriebssysteme zu testen und zu nutzen, ohne zusätzliche Hardware.</p>
+                
+                        <p>Wenn VirtualBox bei der Ausführung einer VM Probleme bereitet, kann es helfen, das Floppy-Laufwerk zu deaktivieren und/oder den Controller zu entfernen. Diese Optionen sind oft standardmäßig aktiviert, werden jedoch selten benötigt und können den Startprozess der VM verlangsamen oder Probleme verursachen.</p>
+                        
+                        <p><strong>Floppy-Laufwerk deaktivieren:</strong><br>
+                        - Einige virtuelle Maschinen haben ein standardmäßig aktiviertes Floppy-Laufwerk, auch wenn dieses nicht benötigt wird.<br>
+                        - Durch das Deaktivieren des Floppy-Laufwerks im VirtualBox-Manager unter den Einstellungen der jeweiligen VM lässt sich der Bootvorgang beschleunigen und potenzielle Fehler vermeiden.</p>
+                        
+                        <p><strong>Controller entfernen:</strong><br>
+                        - Virtuelle Maschinen können mit mehreren Controllern konfiguriert werden (z. B. IDE, SATA), von denen einige möglicherweise unnötig sind.<br>
+                        - Das Entfernen ungenutzter oder fehlerhafter Controller aus den Einstellungen der VM kann Kompatibilitätsprobleme lösen und die Stabilität der virtuellen Maschine verbessern.</p>
                     </div>
-                </div>   
+                </div>
+                
+                <div class="abbreviation-item">
+                    <button class="dropdown-btn">Hypervisor 1 und Hypervisor 2</button>
+                    <div class="dropdown-content">
+                        <p><strong>Hypervisor Typ 1 (Bare Metal):</strong><br>
+
+                           <strong> Direkte Installation:</strong> Läuft direkt auf der Hardware des Hosts, ohne darunter liegendes Betriebssystem.<br>
+                           <strong> Performance:</strong> Bietet bessere Leistung und Effizienz, da es die Hardware direkt steuert.<br>
+                           <strong> Beispiele:</strong> VMware ESXi, Microsoft Hyper-V (in der Core-Variante), Xen. <br><br>
+                           <strong> Hypervisor Typ 2 (Hosted):</strong><br>
+                            
+                           <strong> Installation auf einem Betriebssystem: </strong>Läuft als Anwendung auf einem bestehenden Betriebssystem.
+                           <strong> Performance:</strong> In der Regel weniger effizient, da er über das Host-Betriebssystem läuft, was zusätzliche Overhead verursacht.
+                           <strong> Beispiele:</strong> VMware Workstation, Oracle VirtualBox, Parallels Desktop.
+                           <strong> Zusammengefasst:</strong> Typ 1 ist direkter, schneller und für produktive Umgebungen geeignet, während Typ 2 einfacher zu nutzen ist und sich besser für Entwicklungs- oder Testumgebungen eignet.</p>
+                    </div>
+                </div>
                 <div class="abbreviation-item">
                     <button class="dropdown-btn">Hosted Hypervisor</button>
                     <div class="dropdown-content">
@@ -184,12 +251,7 @@
                             <p>Ein Snapshot in VirtualBox ist eine gespeicherte Momentaufnahme des aktuellen Zustands einer virtuellen Maschine. Er ermöglicht es, zu diesem Zustand zurückzukehren, falls Änderungen oder Fehler auftreten.</p>
                         </div>
                     </div>
-                        <div class="abbreviation-item">
-                            <button class="dropdown-btn">Bridged Adapter</button>
-                            <div class="dropdown-content">
-                                <p>Ein <strong>Bridged Adapter</strong> gibt einer virtuellen Maschine ihre eigene IP-Adresse im Netzwerk, sodass sie wie ein echter Computer direkt mit anderen Geräten und dem Internet kommunizieren kann.</p>
-                            </div>
-                        </div>
+                       
                             <div class="abbreviation-item">
                                 <button class="dropdown-btn">VirtualBox Guest Additions</button>
                                 <div class="dropdown-content">
@@ -197,22 +259,73 @@
                                 </div></div>
                            
                 
-                <div class="abbreviation-item">
-                    <button class="dropdown-btn">UEFI/BIOS und ihre Unterschiede</button>
-                    <div class="dropdown-content">
-                         <p><strong>BIOS</strong> (Basic Input/Output System) und <strong>UEFI</strong> (Unified Extensible Firmware Interface) sind beide Programme, die auf einem Computer laufen, noch bevor das eigentliche Betriebssystem (z. B. Windows oder macOS) gestartet wird. Sie sind dafür verantwortlich, den Computer zu starten und das Betriebssystem zu laden.</p>
-                   
-                        <p><strong>Unterschiede:</strong></p>
-                        
-                        <p>BIOS: Älter, textbasierte Oberfläche, unterstützt Festplatten bis 2 TB, langsamer Start.<br>
-                            UEFI: Moderner, grafische Oberfläche, unterstützt größere Festplatten, schnellerer Start, bessere Sicherheit (z. B. Secure Boot).</p>
-                        
-                        <p><strong>Einsatzgebiete:</strong></p>
-                        <p>BIOS: In älteren Computern oder speziellen Umgebungen.<br>
-                            UEFI: In fast allen modernen Computern als Standard.</p>
-  
-                </div>
-                </div>
+                                <div class="abbreviation-item">
+                                    <button class="dropdown-btn">UEFI/BIOS und ihre Unterschiede</button>
+                                    <div class="dropdown-content">
+                                        <p><strong>BIOS</strong> (Basic Input/Output System) und <strong>UEFI</strong> (Unified Extensible Firmware Interface) sind beide Firmware-Schnittstellen, die den Computer beim Einschalten initialisieren und das Betriebssystem laden. Während das BIOS älter und weiter verbreitet ist, hat UEFI in modernen Computern zunehmend an Bedeutung gewonnen.</p>
+                                        
+                                        <p><strong>Unterschiede:</strong></p>
+                                        
+                                        <p><strong>BIOS:</strong><br>
+                                        - Ältere Technologie, entwickelt in den 1980er Jahren.<br>
+                                        - Textbasierte Oberfläche mit begrenzten Steuerungsmöglichkeiten.<br>
+                                        - Unterstützt Festplatten bis 2 TB aufgrund der MBR (Master Boot Record)-Beschränkung.<br>
+                                        - Langsamerer Startprozess, da es die Hardware schrittweise initialisiert.<br>
+                                        - Kann nur im 16-Bit-Real-Modus arbeiten, was die Funktionalität einschränkt.<br>
+                                        - Häufig noch in älteren Computern und Spezialumgebungen zu finden.</p>
+                                        
+                                        <p><strong>UEFI:</strong><br>
+                                        - Moderner Standard, der BIOS ersetzt, entwickelt ab den 2000er Jahren.<br>
+                                        - Grafische Oberfläche mit Mausunterstützung und erweiterten Einstellungen.<br>
+                                        - Unterstützt Festplatten größer als 2 TB durch die Nutzung von GPT (GUID Partition Table).<br>
+                                        - Schnellerer Startprozess durch parallele Initialisierung der Hardware.<br>
+                                        - Kann im 32-Bit- oder 64-Bit-Modus arbeiten, was mehr Funktionen und bessere Leistung ermöglicht.<br>
+                                        - Integrierte Sicherheitsfunktionen wie Secure Boot, das verhindert, dass unsignierte oder manipulierte Software geladen wird.</p>
+                                        
+                                        <p><strong>Einsatzgebiete:</strong></p>
+                                        <p><strong>BIOS:</strong><br>
+                                        - Noch in älteren Computern oder speziellen Umgebungen, wo moderne Hardware oder Funktionen nicht benötigt werden.</p>
+                                        
+                                        <p><strong>UEFI:</strong><br>
+                                        - Standard in fast allen modernen Computern, besonders in solchen, die fortschrittliche Sicherheitsfunktionen und größere Festplatten unterstützen müssen.</p>
+                                    </div>
+                                </div>
+                                <div class="abbreviation-item">
+                                    <button class="dropdown-btn">Netzwerkadapter in VirtualBox</button>
+                                    <div class="dropdown-content">
+                                        <p>VirtualBox bietet verschiedene Netzwerkmodi, um virtuelle Maschinen (VMs) mit dem Host und dem Internet zu verbinden. Diese Modi bestimmen, wie die VM-Netzwerkverbindungen funktionieren und wie sie mit anderen Netzwerken interagieren.</p>
+                                        
+                                        <p><strong>Netzwerkmodi:</strong></p>
+                                        
+                                        <p><strong>NAT (Network Address Translation):</strong><br>
+                                        - Standardmodus, der es der VM ermöglicht, das Internet über die IP-Adresse des Hosts zu erreichen.<br>
+                                        - Einfach einzurichten, da keine spezielle Netzwerkkonfiguration erforderlich ist.<br>
+                                        - VMs haben keinen direkten Zugang zum lokalen Netzwerk des Hosts, sondern nur über NAT.<br>
+                                        - Gut geeignet für den einfachen Internetzugang der VM, aber eingeschränkte Netzwerkkommunikation.</p>
+                                        
+                                        <p><strong>Bridged Adapter:</strong><br>
+                                        - Ermöglicht der VM, wie ein physisches Gerät im Netzwerk des Hosts zu agieren.<br>
+                                        - VM erhält eine eigene IP-Adresse im gleichen Netzwerk wie der Host.<br>
+                                        - Erlaubt direkte Kommunikation mit anderen Geräten im Netzwerk.<br>
+                                        - Ideal für Szenarien, in denen die VM als eigenständiger Rechner im Netzwerk agieren soll.</p>
+                                        
+                                        <p><strong>Internal Network:</strong><br>
+                                        - Schafft ein isoliertes Netzwerk, in dem nur VMs miteinander kommunizieren können.<br>
+                                        - Keine Kommunikation mit dem Host oder externen Netzwerken.<br>
+                                        - Nützlich für Tests und Szenarien, in denen VMs untereinander vernetzt, aber vom restlichen Netzwerk isoliert sein sollen.</p>
+                                        
+                                        <p><strong>Host-Only Adapter:</strong><br>
+                                        - Erstellt ein Netzwerk, in dem die VM nur mit dem Host und anderen VMs im selben Netzwerk kommunizieren kann.<br>
+                                        - Keine direkte Verbindung zum Internet.<br>
+                                        - Nützlich für den direkten Datenaustausch zwischen Host und VM ohne externe Einflüsse.</p>
+                                        
+                                        <p><strong>Not Attached:</strong><br>
+                                        - VM ist nicht mit einem Netzwerk verbunden.<br>
+                                        - Praktisch, wenn keine Netzwerkverbindung benötigt wird oder für isolierte Tests.</p>
+                                    </div>
+                                </div>
+                                
+                                
             </div>
         </div>
 
@@ -265,44 +378,7 @@
                     </div>
                 </div>
    
-                <div class="abbreviation-item">
-                    <button class="dropdown-btn">OSI-Modell</button>
-                    <div class="dropdown-content">
-                        <p>Das <a href="https://3.bp.blogspot.com/-oz_8MJgG70k/Vxm-klCDucI/AAAAAAAAIVk/YblKuGAxGBk6Ma_7QhViiYoXrfjbGj30wCLcB/s1600/2911722148_b705ac15d9_o.png" target="_blank" rel="noopener noreferrer">OSI-Modell (Open Systems Interconnection)</a> ist ein sieben-Schichten-Modell für Netzwerkkommunikation, das hilft, Netzwerksysteme zu verstehen und zu standardisieren.</p>
-
-                        <div class="osi-model">
-                            <div class="osi-layer" id="layer-7">
-                                <h2>Layer 7: Anwendung</h2>
-                                <p>Stellt Dienste für Endanwenderanwendungen bereit.</p>
-                            </div>
-                            <div class="osi-layer" id="layer-6">
-                                <h2>Layer 6: Darstellung</h2>
-                                <p>Stellt sicher, dass die Daten in einem standardisierten Format vorliegen.</p>
-                            </div>
-                            <div class="osi-layer" id="layer-5">
-                                <h2>Layer 5: Sitzung</h2>
-                                <p>Verwaltet die Sitzungen und den Dialog zwischen den Anwendungen.</p>
-                            </div>
-                            <div class="osi-layer" id="layer-4">
-                                <h2>Layer 4: Transport</h2>
-                                <p>Stellt die Übertragung von Daten zwischen Endsystemen sicher.</p>
-                            </div>
-                            <div class="osi-layer" id="layer-3">
-                                <h2>Layer 3: Netzwerk</h2>
-                                <p>Verantwortlich für die Weiterleitung der Pakete durch das Netzwerk.</p>
-                            </div>
-                            <div class="osi-layer" id="layer-2">
-                                <h2>Layer 2: Sicherung</h2>
-                                <p>Stellt die fehlerfreie Übertragung von Frames zwischen Geräten sicher.</p>
-                            </div>
-                            <div class="osi-layer" id="layer-1">
-                                <h2>Layer 1: Physikalisch</h2>
-                                <p>Definiert die physikalischen Mittel für die Datenübertragung.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+                
                
             
         </div>
