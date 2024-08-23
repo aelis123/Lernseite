@@ -1,34 +1,85 @@
+:root {
+    /* Farbvariablen */
+    --color-light-bg: #f5f5f5;
+    --color-dark-bg: #1e1e1e;
+    --color-light-text: #333333;
+    --color-dark-text: #f5f5f5;
+    --color-link: #3c91e6;
+    --color-link-hover: #1e6bb8;
+    --container-bg-light: #ffffff;
+    --container-bg-dark: #2a2a2a;  /* Dark Mode Container Hintergrundfarbe */
+    --container-text-light: #333333;
+    --container-text-dark: #dcdcdc;  /* Dark Mode Container Textfarbe */
+    --button-bg-light: #3c91e6;
+    --button-bg-dark: #1e6bb8;
+    --transition-time: 0.3s;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--color-light-bg); 
+    color: var(--color-light-text);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Min-height statt height für bessere Anpassung */
+    min-height: 100vh;
     overflow: auto;
-    flex-direction: column; /* Flex-direction auf column setzen */
+    flex-direction: column;
+    transition: background-color var(--transition-time), color var(--transition-time);
 }
 
 a { 
     text-decoration: none;
-    color: #3c6ca3;
-    transition: color 0.3s ease;
+    color: var(--color-link);
+    transition: color var(--transition-time);
+}
+
+a:hover {
+    color: var(--color-link-hover);
 }
 
 .container-wrapper {
     display: flex;
-    justify-content: center; /* Center anstelle von space-between für mobiles Layout */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
     max-width: 1200px;
-    padding: 10px; /* Padding hinzugefügt für bessere Darstellung auf kleineren Bildschirmen */
+    padding: 10px;
+}
+
+.theme-toggle-btn {
+    background-color: var(--button-bg-light);
+    color: var(--color-dark-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color var(--transition-time), color var(--transition-time), transform 0.2s ease-in-out;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--button-bg-dark);
+    transform: scale(1.1); /* Leichte Vergrößerung beim Hover für ein interaktiveres Gefühl */
+}
+
+body.light-mode {
+    background-color: var(--color-light-bg);
+    color: var(--color-light-text);
+}
+
+body.dark-mode {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,11 +90,45 @@ a {
     max-height: 80vh;
     overflow: auto;
     word-wrap: break-word;
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.container.light-mode {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+}
+
+.container.dark-mode {
+    background-color: var(--container-bg-dark);
+    color: var(--container-text-dark);
+}
+
+.osi-model {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid var(--container-text-light);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.osi-model.light-mode {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+    border-color: var(--container-text-light);
+}
+
+.osi-model.dark-mode {
+    background-color: var(--container-bg-dark);
+    color: var(--container-text-dark);
+    border-color: var(--container-text-dark);
 }
 
 h1 {
     text-align: center;
-    color: #333333;
+    color: inherit;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -55,15 +140,6 @@ h1 {
 
 .abbreviation-item {
     margin-bottom: 10px;
-}
-
-.osi-model {
-    width: 100%; /* Breite auf 100% gesetzt, um den verfügbaren Platz zu nutzen */
-    max-width: 300px; /* Maximale Breite für große Bildschirme */
-    border: 2px solid #333;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .osi-layer {
@@ -78,12 +154,12 @@ h1 {
 .osi-layer h2 {
     font-size: 18px;
     margin: 0 0 5px;
-    color: #333;
+    color: inherit;
 }
 
 .osi-layer p {
     margin: 0;
-    color: #666;
+    color: inherit;
 }
 
 .dropdown-btn {
@@ -96,10 +172,12 @@ h1 {
     width: 100%;
     text-align: left;
     font-size: 18px;
+    transition: background-color var(--transition-time), transform 0.2s ease-in-out;
 }
 
 .dropdown-btn:hover {
     background-color: #2980b9;
+    transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
 }
 
 .dropdown-content {
@@ -115,16 +193,16 @@ h1 {
 /* Media Query für kleinere Bildschirme */
 @media (max-width: 768px) {
     .container-wrapper {
-        flex-direction: column; /* Wechsel zur Spaltenausrichtung auf kleineren Bildschirmen */
-        align-items: center; /* Zentriert die Container */
+        flex-direction: column;
+        align-items: center;
     }
 
     .container {
-        max-width: 100%; /* Maximale Breite entfernt, um die volle Breite zu nutzen */
-        min-width: auto; /* Minimale Breite entfernt, um sich an kleinere Bildschirme anzupassen */
+        max-width: 100%;
+        min-width: auto;
     }
 
     .osi-model {
-        max-width: 100%; /* Maximale Breite entfernt, um die volle Breite zu nutzen */
+        max-width: 100%;
     }
 }
