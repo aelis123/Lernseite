@@ -67,3 +67,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+// Modal-Elemente abrufen
+var modal = document.getElementById("imgModal");
+var modalImg = document.getElementById("imgPopup");
+var captionText = document.getElementById("caption");
+
+// Bei Klick auf ein Bild das Modal öffnen
+var images = document.querySelectorAll('.popup-img');
+images.forEach(function(image) {
+    image.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+});
+
+// Modal schließen
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
