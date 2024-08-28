@@ -12,7 +12,7 @@
     --container-text-dark: #dcdcdc;  /* Dark Mode Container Textfarbe */
     --button-bg-light: #3c91e6;
     --button-bg-dark: #1e6bb8;
-    --transition-time: 0.3s;
+    --transition-time: 2s;
 }
 
 body {
@@ -39,6 +39,16 @@ a {
 a:hover {
     color: var(--color-link-hover);
 }
+.risk-matrix th {
+    background-color: var(--container-bg-dark);
+    color: var(--container-text-dark);
+}
+
+.risk-matrix td {
+    background-color: var(--container-bg-dark);
+    color: var(--container-text-dark);
+}
+
 
 .container-wrapper {
     display: flex;
@@ -49,6 +59,14 @@ a:hover {
     max-width: 1200px;
     padding: 10px;
 }
+.container-wrapper.light-mode {
+    background-color: var(--color-light-bg);
+}
+
+.container-wrapper.dark-mode {
+    background-color: var(--color-dark-bg);
+}
+
 
 .theme-toggle-btn {
     background-color: var(--button-bg-light);
@@ -101,6 +119,24 @@ body.dark-mode {
 .container.dark-mode {
     background-color: var(--container-bg-dark);
     color: var(--container-text-dark);
+}
+.modal-content {
+    background-color: var(--container-bg-dark);
+    color: var(--container-text-dark);
+}
+
+.close {
+    color: var(--container-text-dark);
+}
+
+.open-modal-btn {
+    background-color: var(--button-bg-dark);
+    color: var(--container-text-dark);
+}
+
+.open-modal-btn:hover {
+    background-color: var(--button-bg-light);
+    color: aliceblue;
 }
 
 .osi-model {
@@ -227,15 +263,186 @@ h1 {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
+    color: #ffffff;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
 }
 
+/* Der Hintergrund des Modals */
+.modal {
+    display: none; /* Standardmäßig versteckt */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtiger Hintergrund */
+}
+
+/* Der Inhalt des Modals */
+.modal-content {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Der Schließen-Button */
+.close {
+    color: var(--color-dark-text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--color-link);
+}
+
+/* Der Button zum Öffnen des Modals */
+.open-modal-btn {
+    background-color: var(--button-bg-light);
+    color: var(--color-dark-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.open-modal-btn:hover {
+    background-color: var(--button-bg-dark);
+    color: var(--color-light-text);
+}
+
+/* Tabelle im Modal */
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.risk-matrix {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.risk-matrix th, .risk-matrix td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+/* Der Hintergrund des Modals */
+.modal {
+    display: none; /* Standardmäßig versteckt */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtiger Hintergrund */
+}
+
+/* Der Inhalt des Modals */
+.modal-content {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Der Schließen-Button */
+.close {
+    color: var(--color-dark-text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--color-link);
+}
+
+/* Der Button zum Öffnen des Modals */
+.open-modal-btn {
+    background-color: var(--button-bg-light);
+    color: var(--color-dark-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.open-modal-btn:hover {
+    background-color: var(--button-bg-dark);
+    color: var(--color-light-text);
+}
+
+/* Tabelle im Modal */
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.risk-matrix {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.risk-matrix th, .risk-matrix td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.risk-matrix th {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+}
+
+.risk-matrix td {
+    background-color: var(--color-light-bg);
+    color: var(--color-light-text);
+}
+
+
+.risk-matrix th {
+    background-color: var(--container-bg-light);
+    color: var(--container-text-light);
+}
+
+.risk-matrix td {
+    background-color: var(--color-light-bg);
+    color: var(--color-light-text);
+}
+
+
 .close:hover,
 .close:focus {
-    color: #bbb;
+    color: #3b3b3b;
     text-decoration: none;
     cursor: pointer;
 }
